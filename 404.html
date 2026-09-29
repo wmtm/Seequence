@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Lost sheep — SEEQUENCE</title>
+  <meta name="robots" content="noindex">
+  <meta name="theme-color" content="#0b0b0c">
+  <!-- GitHub Pages serves this file for any missing URL, at any depth, so paths here are absolute. -->
+  <link rel="icon" type="image/png" sizes="32x32" href="/Seequence/assets/img/favicon-32.png">
+  <link rel="stylesheet" href="/Seequence/assets/css/base.css">
+  <style>
+    .lost {
+      min-height: 100svh;
+      display: grid;
+      place-content: center;
+      justify-items: center;
+      gap: var(--u-2);
+      padding: var(--u) var(--gutter);
+      text-align: center;
+    }
+    .lost img {
+      width: 84px;
+      height: 84px;
+      animation: lost-tilt 4.2s var(--ease-io) infinite;
+    }
+    .lost h1 {
+      font-size: clamp(3rem, 12vw, 7rem);
+      text-transform: uppercase;
+      letter-spacing: -0.03em;
+    }
+    .lost p {
+      margin: 0;
+      color: var(--paper-60);
+    }
+    @keyframes lost-tilt {
+      0%, 100% { transform: rotate(-4.2deg); }
+      50% { transform: rotate(4.2deg); }
+    }
+  </style>
+</head>
+<body>
+  <div class="grain" aria-hidden="true"></div>
+  <main class="lost">
+    <img src="/Seequence/assets/img/logo.png" alt="" width="84" height="84">
+    <h1>Lost <em class="accent">sheep.</em></h1>
+    <p>This page wandered off. The stories are still where you left them.</p>
+    <a class="pill pill--solid" href="/Seequence/">Back to the library <span class="arrow arrow--right" aria-hidden="true">→</span></a>
+  </main>
+</body>
+</html>
