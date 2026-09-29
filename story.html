@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en" class="reader-page">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Desert Arc — SEEQUENCE</title>
+  <meta name="description" content="Desert Arc, a vertical comic by BlackSheep. It never ends: after the last panel, the first one follows.">
+  <meta name="theme-color" content="#0b0b0c">
+  <meta name="color-scheme" content="dark">
+
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="SEEQUENCE">
+  <meta property="og:title" content="Desert Arc — SEEQUENCE">
+  <meta property="og:description" content="A vertical comic that never ends. Scroll down. Keep going.">
+  <meta property="og:image" content="https://wmtm.github.io/Seequence/assets/img/og.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Desert Arc — SEEQUENCE">
+  <meta name="twitter:description" content="A vertical comic that never ends. Scroll down. Keep going.">
+  <meta name="twitter:image" content="https://wmtm.github.io/Seequence/assets/img/og.jpg">
+
+  <link rel="icon" href="favicon.ico" sizes="48x48">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32.png">
+  <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+  <link rel="manifest" href="site.webmanifest">
+
+  <link rel="preload" href="assets/fonts/bricolage-grotesque.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="stories.json" as="fetch" crossorigin="anonymous">
+  <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="stylesheet" href="assets/css/reader.css">
+</head>
+<body class="reader">
+  <a class="skip-link" href="#strip">Skip to the comic</a>
+
+  <div class="progress" aria-hidden="true"><span class="progress__bar" data-progress></span></div>
+
+  <header class="reader-header" data-header>
+    <div class="reader-header__bar">
+      <a class="back" href="./" data-back data-cursor="link" aria-label="Back to the library">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M10 3L5 8l5 5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+      <a class="reader-header__mark" href="./" data-cursor="link" tabindex="-1" aria-hidden="true">
+        <img src="assets/img/logo.png" alt="" width="26" height="26" style="view-transition-name: brand-mark">
+      </a>
+      <div class="reader-header__titles">
+        <h1 class="reader-title" data-title style="view-transition-name: story-title">Desert Arc</h1>
+        <p class="reader-by">by BlackSheep</p>
+      </div>
+      <p class="reader-count" aria-hidden="true"><span data-count>01</span><span class="reader-count__of">/<span data-total>09</span></span></p>
+    </div>
+  </header>
+
+  <aside class="rail rail--left" aria-hidden="true"><span data-rail-title>Desert Arc</span> — by BlackSheep</aside>
+  <aside class="rail rail--right" aria-hidden="true">Loop <span data-loop>01</span></aside>
+
+  <main id="strip" class="strip-wrap" tabindex="-1">
+    <p class="sr-only" data-sr-intro>This comic loops forever: after the last panel, the first one follows again.</p>
+    <div class="strip" data-strip aria-label="Comic panels" role="region">
+      <div class="strip__spacer" data-spacer aria-hidden="true"></div>
+    </div>
+    <div class="reader-message" data-message hidden></div>
+  </main>
+
+  <script src="assets/js/common.js" defer></script>
+  <script src="assets/js/reader.js" defer></script>
+</body>
+</html>

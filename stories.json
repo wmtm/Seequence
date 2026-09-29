@@ -1,0 +1,76 @@
+{
+  "stories": [
+    {
+      "id": "desert-arc",
+      "title": "Desert Arc",
+      "status": "live",
+      "cover": "stories/desert-arc/cover.jpg",
+      "count": 9,
+      "ext": "jpg",
+      "webp": true,
+      "width": 1080,
+      "panels": [
+        [
+          1080,
+          1385
+        ],
+        [
+          1080,
+          1135
+        ],
+        [
+          1080,
+          1090
+        ],
+        [
+          1080,
+          1560
+        ],
+        [
+          1080,
+          2225
+        ],
+        [
+          1080,
+          1075
+        ],
+        [
+          1080,
+          1550
+        ],
+        [
+          1080,
+          1565
+        ],
+        [
+          1080,
+          2185
+        ]
+      ]
+    },
+    {
+      "id": "soon-02",
+      "title": "Untitled",
+      "status": "coming-soon",
+      "teaser": "assets/teasers/teaser-02.jpg"
+    },
+    {
+      "id": "soon-03",
+      "title": "Untitled",
+      "status": "coming-soon",
+      "teaser": "assets/teasers/teaser-03.jpg"
+    },
+    {
+      "id": "soon-04",
+      "title": "Untitled",
+      "status": "coming-soon",
+      "teaser": "assets/teasers/teaser-04.jpg"
+    },
+    {
+      "id": "soon-05",
+      "title": "Untitled",
+      "status": "coming-soon",
+      "teaser": "assets/teasers/teaser-05.jpg"
+    }
+  ]
+}

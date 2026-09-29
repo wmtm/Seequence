@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>SEEQUENCE — Comics by BlackSheep that never end</title>
+  <meta name="description" content="Vertical comics by BlackSheep that scroll forever. Reach the last panel and the first one is already waiting. Start with Desert Arc.">
+  <meta name="theme-color" content="#0b0b0c">
+  <meta name="color-scheme" content="dark">
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="SEEQUENCE">
+  <meta property="og:title" content="SEEQUENCE — Stories with no last page">
+  <meta property="og:description" content="Vertical comics that scroll forever. Start with Desert Arc.">
+  <meta property="og:image" content="https://wmtm.github.io/Seequence/assets/img/og.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="SEEQUENCE — the white sheep logo over desert artwork">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="SEEQUENCE — Stories with no last page">
+  <meta name="twitter:description" content="Vertical comics that scroll forever. Start with Desert Arc.">
+  <meta name="twitter:image" content="https://wmtm.github.io/Seequence/assets/img/og.jpg">
+
+  <link rel="icon" href="favicon.ico" sizes="48x48">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32.png">
+  <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+  <link rel="manifest" href="site.webmanifest">
+
+  <link rel="preload" href="assets/fonts/bricolage-grotesque.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/inter.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="stories/desert-arc/cover.webp" as="image" type="image/webp">
+  <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="stylesheet" href="assets/css/home.css">
+
+  <script type="speculationrules">
+  { "prerender": [{ "where": { "href_matches": "*story.html*" }, "eagerness": "moderate" }] }
+  </script>
+</head>
+<body class="home">
+  <a class="skip-link" href="#library">Skip to the stories</a>
+  <div class="grain" aria-hidden="true"></div>
+
+  <header class="site-header">
+    <div class="site-header__bar">
+      <a class="brand" href="./" data-cursor="link" aria-label="SEEQUENCE by BlackSheep, home">
+        <img src="assets/img/logo.png" alt="" width="26" height="26">
+        <span>BLACKSHEEP</span>
+      </a>
+      <nav class="site-nav" aria-label="Main">
+        <a class="pill site-nav__library" href="#library" data-cursor="link"><span class="num">01</span> Library</a>
+        <a class="pill" href="https://wmtm.github.io/Blacksheep/" data-cursor="link"><span class="num">02</span> Portfolio <span class="arrow" aria-hidden="true">↗</span></a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- Hero -->
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero__glow" aria-hidden="true">
+        <span class="blob blob--violet"></span>
+        <span class="blob blob--coral"></span>
+      </div>
+
+      <div class="hero__inner">
+        <p class="eyebrow hero__eyebrow rise" style="--i:0">Seequence — comics by BlackSheep</p>
+        <h1 id="hero-title" class="hero__title">
+          <span class="line"><span class="rise" style="--i:1">Stories</span></span>
+          <span class="line"><span class="rise" style="--i:2">that never</span></span>
+          <span class="line"><span class="rise" style="--i:3"><em class="accent wobble"><span class="sr-only">end.</span><span aria-hidden="true" style="--k:0">e</span><span aria-hidden="true" style="--k:1">n</span><span aria-hidden="true" style="--k:2">d</span><span aria-hidden="true" style="--k:3">.</span></em></span></span>
+        </h1>
+
+        <div class="hero__foot">
+          <p class="hero__lede rise" style="--i:4">
+            Vertical comics you scroll forever. Reach the last panel and the first one is already waiting. <strong>Make it loop.</strong>
+          </p>
+          <div class="hero__ctas rise" style="--i:5">
+            <a class="pill pill--solid" href="story.html?id=desert-arc" data-cursor="link">Read Desert Arc <span class="arrow arrow--right" aria-hidden="true">→</span></a>
+            <a class="pill" href="#library" data-cursor="link">The library <span class="arrow arrow--down" aria-hidden="true">↓</span></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Ticker -->
+    <div class="ticker" aria-hidden="true">
+      <div class="ticker__track">
+        <ul><li>Seequence</li><li>Make it weird</li><li>No last page</li><li>Read forever</li><li>Desert Arc — out now</li></ul>
+        <ul><li>Seequence</li><li>Make it weird</li><li>No last page</li><li>Read forever</li><li>Desert Arc — out now</li></ul>
+      </div>
+    </div>
+
+    <!-- Library -->
+    <section id="library" class="library" aria-labelledby="library-title" tabindex="-1">
+      <div class="library__head">
+        <p class="eyebrow" data-reveal><span class="num">01</span> — The library</p>
+        <h2 id="library-title" data-reveal>Five stories.<br>One is <em class="accent">awake.</em></h2>
+        <p class="library__note" data-reveal>The rest are still dreaming. Hover if you dare peek.</p>
+      </div>
+
+      <ol class="deck" data-deck aria-label="Stories">
+        <!-- Rendered from stories.json by assets/js/home.js -->
+      </ol>
+      <noscript>
+        <p class="library__note"><a href="story.html?id=desert-arc">Read Desert Arc →</a> (the reader needs JavaScript to loop forever.)</p>
+      </noscript>
+    </section>
+
+    <!-- Outline ticker -->
+    <div class="ticker ticker--outline ticker--reverse" aria-hidden="true">
+      <div class="ticker__track">
+        <ul><li>Scroll down</li><li>Keep going</li><li>There is no bottom</li><li>Make it move</li></ul>
+        <ul><li>Scroll down</li><li>Keep going</li><li>There is no bottom</li><li>Make it move</li></ul>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="site-footer__cta">
+      <p class="eyebrow" data-reveal>You read comics. We make too many.</p>
+      <h2 data-reveal>Want the rest of the <em class="accent">flock?</em></h2>
+      <a class="pill pill--solid" href="https://wmtm.github.io/Blacksheep/" data-cursor="link" data-reveal>
+        Visit the portfolio <span class="arrow" aria-hidden="true">↗</span>
+      </a>
+    </div>
+    <div class="site-footer__base">
+      <p class="brand-small">SEEQUENCE <span class="fine">by BlackSheep</span></p>
+      <p class="fine">© <span data-year>2026</span> BlackSheep — Mathieu Maigrot. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="assets/js/common.js" defer></script>
+  <script src="assets/js/home.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,210 @@
+/* Reader — one continuous strip that never ends */
+
+html.reader-page {
+  overflow-anchor: none;          /* we manage the scroll position ourselves */
+  scrollbar-width: none;          /* no scrollbar clutter (Firefox) */
+  -webkit-tap-highlight-color: transparent;
+}
+html.reader-page::-webkit-scrollbar {
+  display: none;                  /* no scrollbar clutter (WebKit/Blink) */
+}
+.reader {
+  overflow-anchor: none;
+}
+
+/* ---------- Strip ---------- */
+.strip-wrap {
+  outline: none;
+}
+.strip {
+  --w: 1080px;
+  width: 100%;
+  max-width: var(--w);
+  margin: 0 auto;
+  background: var(--ink-soft);
+  overflow-anchor: none;
+}
+.strip__spacer {
+  height: 0;
+}
+.strip__set,
+.strip__panel,
+.strip__panel img {
+  display: block;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+.strip__panel img {
+  width: 100%;
+  height: auto;
+  color: transparent;             /* never flash alt text while loading */
+  background: var(--ink-soft);
+  user-select: none;
+  -webkit-user-select: none;
+  -webkit-touch-callout: none;
+}
+
+/* ---------- Progress ---------- */
+.progress {
+  position: fixed;
+  inset: 0 0 auto 0;
+  height: 2px;
+  z-index: 60;
+  pointer-events: none;
+  background: rgb(246 243 238 / 0.08);
+}
+.progress__bar {
+  display: block;
+  height: 100%;
+  width: 100%;
+  background: var(--paper);
+  transform-origin: 0 50%;
+  transform: scaleX(0);
+}
+
+/* ---------- Header ---------- */
+.reader-header {
+  position: fixed;
+  inset: 0 0 auto 0;
+  z-index: 50;
+  padding: calc(10px + env(safe-area-inset-top)) max(12px, var(--gutter)) 0;
+  pointer-events: none;
+  transition: transform var(--t) var(--ease), opacity var(--t) var(--ease);
+}
+.reader-header.is-hidden {
+  transform: translateY(calc(-100% - 12px));
+  opacity: 0;
+}
+.reader-header:focus-within {
+  transform: none;
+  opacity: 1;
+}
+.reader-header__bar {
+  pointer-events: auto;
+  max-width: 760px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 5px 16px 5px 5px;
+  border: 1px solid rgb(42 42 46 / 0.8);
+  border-radius: 999px;
+  background: rgb(11 11 12 / 0.72);
+  -webkit-backdrop-filter: blur(14px) saturate(1.2);
+  backdrop-filter: blur(14px) saturate(1.2);
+}
+.back {
+  flex: none;
+  width: 42px;
+  height: 42px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  border: 1px solid var(--line);
+  transition: border-color var(--t) var(--ease), background-color var(--t) var(--ease), transform var(--t) var(--ease);
+}
+.back:hover {
+  border-color: var(--paper);
+  background: var(--paper);
+  color: var(--ink);
+}
+.back:active {
+  transform: scale(0.92);
+}
+.reader-header__mark img {
+  width: 24px;
+  height: 24px;
+  display: block;
+}
+.reader-header__titles {
+  min-width: 0;
+  flex: 1;
+  line-height: 1.1;
+}
+.reader-title {
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.reader-by {
+  margin: 2px 0 0;
+  font-size: 11px;
+  letter-spacing: 0.04em;
+  color: var(--paper-60);
+}
+.reader-count {
+  margin: 0;
+  flex: none;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 15px;
+  font-variant-numeric: tabular-nums;
+}
+.reader-count__of {
+  color: var(--paper-40);
+  font-size: 12px;
+  margin-left: 2px;
+}
+
+/* ---------- Side rails (wide screens only) ---------- */
+.rail {
+  display: none;
+}
+@media (min-width: 1300px) {
+  .rail {
+    display: block;
+    position: fixed;
+    bottom: var(--u);
+    z-index: 40;
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--paper-40);
+    writing-mode: vertical-rl;
+    white-space: nowrap;
+  }
+  .rail--left {
+    left: var(--u);
+    transform: rotate(180deg);
+  }
+  .rail--right {
+    right: var(--u);
+    font-variant-numeric: tabular-nums;
+  }
+}
+
+/* ---------- Messages (unknown / coming-soon story) ---------- */
+.reader-message {
+  min-height: 100svh;
+  display: grid;
+  place-content: center;
+  gap: var(--u-2);
+  padding: var(--u) var(--gutter);
+  text-align: center;
+}
+.reader-message h2 {
+  font-size: clamp(2.6rem, 10vw, 5.6rem);
+  text-transform: uppercase;
+  letter-spacing: -0.03em;
+}
+.reader-message p {
+  margin: 0;
+  color: var(--paper-60);
+}
+.reader-message .pill {
+  justify-self: center;
+}
+
+/* ---------- Loading shimmer (only until a panel has decoded) ---------- */
+.strip__panel img:not(.is-loaded) {
+  background: linear-gradient(100deg, var(--ink-soft) 30%, #202024 50%, var(--ink-soft) 70%) 0 0 / 300% 100%;
+  animation: shimmer 1.68s linear infinite;
+}
+@keyframes shimmer {
+  to { background-position: -150% 0; }
+}
